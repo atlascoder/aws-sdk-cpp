@@ -125,7 +125,7 @@ namespace Aws
             /**
              * convert to int 32
              */
-            static long ConvertToInt32(const char* source);
+            static int ConvertToInt32(const char* source);
 
 
             /** 

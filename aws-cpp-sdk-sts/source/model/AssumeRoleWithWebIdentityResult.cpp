@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -68,7 +68,7 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator =(con
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
     if(!packedPolicySizeNode.IsNull())
     {
-      m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
+      m_packedPolicySize = static_cast<int>(StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str()));
     }
     XmlNode providerNode = resultNode.FirstChild("Provider");
     if(!providerNode.IsNull())

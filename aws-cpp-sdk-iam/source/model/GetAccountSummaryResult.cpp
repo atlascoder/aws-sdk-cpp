@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -58,7 +58,7 @@ GetAccountSummaryResult& GetAccountSummaryResult::operator =(const Aws::AmazonWe
         XmlNode keyNode = summaryMapEntry.FirstChild("key");
         XmlNode valueNode = summaryMapEntry.FirstChild("value");
         m_summaryMap[SummaryKeyTypeMapper::GetSummaryKeyTypeForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-           StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+           static_cast<int>(StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str()));
         summaryMapEntry = summaryMapEntry.NextNode("entry");
       }
 

@@ -257,14 +257,14 @@ long long StringUtils::ConvertToInt64(const char* source)
 }
 
 
-long StringUtils::ConvertToInt32(const char* source)
+int StringUtils::ConvertToInt32(const char* source)
 {
     if (!source)
     {
         return 0;
     }
 
-    return std::atol(source);
+    return static_cast<int>(std::atol(source));
 }
 
 

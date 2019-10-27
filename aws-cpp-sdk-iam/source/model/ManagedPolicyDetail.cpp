@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -108,13 +108,13 @@ ManagedPolicyDetail& ManagedPolicyDetail::operator =(const XmlNode& xmlNode)
     XmlNode attachmentCountNode = resultNode.FirstChild("AttachmentCount");
     if(!attachmentCountNode.IsNull())
     {
-      m_attachmentCount = StringUtils::ConvertToInt32(StringUtils::Trim(attachmentCountNode.GetText().c_str()).c_str());
+      m_attachmentCount = static_cast<int>(StringUtils::ConvertToInt32(StringUtils::Trim(attachmentCountNode.GetText().c_str()).c_str()));
       m_attachmentCountHasBeenSet = true;
     }
     XmlNode permissionsBoundaryUsageCountNode = resultNode.FirstChild("PermissionsBoundaryUsageCount");
     if(!permissionsBoundaryUsageCountNode.IsNull())
     {
-      m_permissionsBoundaryUsageCount = StringUtils::ConvertToInt32(StringUtils::Trim(permissionsBoundaryUsageCountNode.GetText().c_str()).c_str());
+      m_permissionsBoundaryUsageCount = static_cast<int>(StringUtils::ConvertToInt32(StringUtils::Trim(permissionsBoundaryUsageCountNode.GetText().c_str()).c_str()));
       m_permissionsBoundaryUsageCountHasBeenSet = true;
     }
     XmlNode isAttachableNode = resultNode.FirstChild("IsAttachable");
